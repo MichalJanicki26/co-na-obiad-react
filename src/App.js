@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Container from "./Container";
+import Head from "./Head";
+import Main from "./Main";
+import Button from "./Button";
+import Recipe from "./Recipe";
+import Bottom from "./Bottom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+    <Head
+      title="Co na Obiad"
+    />
+    <Main>
+      <Button/>
+      <Recipe/>
+    </Main>
+    <Bottom/>
+    </Container>
   );
 }
 
