@@ -1,9 +1,11 @@
-import "./style.css"
+import "./style.css";
+import logo from "./icon.png";
+import Dropdown from "./Dropdown";
 
-const Head = ({ title, dropdown }) => (
+const Head = ({ title, onChangePage }) => (
     <div className="head">
         <div className="head__logo">
-            <img src="%PUBLIC_URL%/icon.png" className="head__logoImg"></img>
+            <img src={logo} alt="logo" className="head__logoImg"/>
         </div>
         <div className="head__title">
             <h1 className="head__title--text">
@@ -11,7 +13,9 @@ const Head = ({ title, dropdown }) => (
             </h1>
         </div>
         <div>
-            {dropdown}
+            <Dropdown
+            onChangePage={onChangePage}
+            />
         </div>
     </div>
 );

@@ -1,22 +1,24 @@
-import Container from "./Container";
-import Head from "./Head";
-import Main from "./Main";
-import Button from "./Button";
-import Recipe from "./Recipe";
-import Bottom from "./Bottom";
+import { useState } from "react";
+import Routes from "./constants/routs"
+import Layout from "./Layout";
+import AddRecipe from "./pages/AddRecipe";
+import CookBook from "./pages/CookBook";
+import Home from "./pages/Home";
 
 function App() {
+
+  const [page, setPage] = useState(Routes.HOME);
+
   return (
-    <Container>
-    <Head
-      title="Co na Obiad"
-    />
-    <Main>
-      <Button/>
-      <Recipe/>
-    </Main>
-    <Bottom/>
-    </Container>
+    <Layout 
+    onChangePage={
+     (rout) => setPage(rout) 
+    }
+    >
+      {page===Routes.HOME && <Home/>}
+      {page===Routes.ADD_RECIPE && <AddRecipe/>}
+      {page===Routes.COOKBOOK && <CookBook/>}
+    </Layout>
   );
 }
 
