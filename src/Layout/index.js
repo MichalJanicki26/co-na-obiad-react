@@ -1,4 +1,3 @@
-
 import Head from "./components/Head";
 
 const Layout = ({children, onChangePage}) => {
